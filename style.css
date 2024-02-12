@@ -1,5 +1,5 @@
 body{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Monserrat', sans-serif;
 }
 
 
@@ -101,11 +101,6 @@ footer{
     margin: 20px;
 }
 
-main{
-    width: 940px;
-    margin: 0 auto;
-}
-
 form{
     width: 40px 0;
 }
@@ -167,12 +162,21 @@ td, th{
     width: 100%;
 }
 
+.principal{
+    padding: 3em 0;
+    background: #fefefe;
+    width: 940px;
+    margin: 0 auto;
+}
+
+
+
 .titulo-principal{
     text-align: center;
     font-size: 2em;
     margin: 0 0 1em;
     clear: left;
-
+   
 }
 
 .principal p{
@@ -193,13 +197,27 @@ td, th{
     margin: 0 20px 20px 0;
 }
 
+/*En esta parte usamos el linear-gradient para sapar un degradado del, color 1 al 2*/
 .mapa{
     padding: 3em 0;
+    background: linear-gradient(#fefefe, #888888);
 }
 
 .mapa p{
     margin: 0 0 2em;
     text-align: center;
+}
+
+.mapa-contenido{
+
+    width: 940px;
+    margin: 0 auto;
+}
+
+.diferenciales{
+    padding: 3em 0;
+    background: #888888;
+
 }
 
 
@@ -218,11 +236,49 @@ td, th{
     line-height: 1.5;
 }
 
-.imagen-diferenciales{
-    width: 60%;
+.items:before{
+    content: "★";
 }
 
+/* Aqui nos valemos de pseudo-clases para poder resaltar solo la primer fila*/
+/* Tambien se puede usar last-child por ejemplo */
+.items:first-child{
+    font-weight: bold;
+}
+
+/* Configuramos el tamaños de esta imagen solo pasa el 60% del ancho de la pagina*/
+.imagen-diferenciales{
+    width: 60%;
+    transition: 400ms;
+    box-shadow: 10px 10px 30px 15px #000000;
+}
+
+.imagen-diferenciales:hover{
+
+    opacity: 0.3;
+
+}
+
+/* COnfiguramos las propiedades del video tamaño y margenes*/
 .video{
     width: 560px;
     margin: 1em auto;
+}
+
+@media screen and (max-width:480px){
+
+    
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+    .caja, .principal, .mapa-contenido, .contenido-diferenciales, .video{
+        width: auto;
+    }
+    
+    .lista-diferenciales, .imagen-diferenciales{
+        width: 100%;
+    }
 }
